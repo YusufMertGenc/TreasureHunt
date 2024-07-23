@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CatchGoldsGUI
-{//dsaddfs
+{
     public abstract class Element
     {
         protected int size;
