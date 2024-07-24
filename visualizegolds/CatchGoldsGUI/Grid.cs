@@ -173,7 +173,7 @@ namespace CatchGoldsGUI
             }
         }
 
-        // Add these methods to resolve errors in Form1.cs
+        
         public int GetSize() => size;
         public char GetGridValue(int x, int y) => hidedGrid[x, y];
     }
