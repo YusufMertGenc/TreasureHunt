@@ -143,64 +143,9 @@ namespace CatchGoldsGUI
             lblPlayer2Score.Text = $"Player 2 Score: {player2.GetScore()}";
         }
 
-        private void EndGame()
-        {
-            string message;
-            if (player1.GetHealth() <= 0)
-            {
-                message = "Player 1 is dead. GAME OVER\n";
-            }
-            else if (player2.GetHealth() <= 0)
-            {
-                message = "Player 2 is dead. GAME OVER\n";
-            }
-            else
-            {
-                message = "Maximum rounds reached. GAME OVER\n";
-            }
-
-            if (player1.GetScore() > player2.GetScore())
-            {
-                message += "PLAYER 1 IS WON CONGRATS!!";
-            }
-            else if (player1.GetScore() < player2.GetScore())
-            {
-                message += "PLAYER 2 IS WON CONGRATS!!";
-            }
-            else
-            {
-                message += "DRAW :/ MAYBE YOU SHOULD PLAY AGAIN";
-            }
-
-            MessageBox.Show(message);
-
-            
-        }
-
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Handle cell click events if needed
-        }
-
-        private void txtXPlayer1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtXPlayer2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPlayer2Health_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtYPlayer2_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

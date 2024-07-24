@@ -36,7 +36,7 @@ namespace CatchGoldsGUI
             health += adjust;
         }
 
-        public int GetScore() => score;
+        public int GetScore() => score; 
         public void SetScore(int score) => this.score = score;
         public int GetGoldCount() => goldCount;
         public void SetGoldCount(int goldCount) => this.goldCount = goldCount;

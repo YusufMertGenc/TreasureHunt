@@ -71,7 +71,7 @@
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // lblPlayer1Health
+            // lblPlayer1Health 
             // 
             this.lblPlayer1Health.AutoSize = true;
             this.lblPlayer1Health.Location = new System.Drawing.Point(104, 202);
