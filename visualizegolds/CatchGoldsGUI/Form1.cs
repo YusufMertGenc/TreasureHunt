@@ -16,7 +16,7 @@ namespace CatchGoldsGUI
         private Player player1;
         private Player player2;
         private int round;
-
+        
         public Form1()
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace CatchGoldsGUI
             player1 = new Player(sizeOfTheBoard);
             player2 = new Player(sizeOfTheBoard);
             round = 0;
-
+            
             grid.ElementDeploy(2 * sizeOfTheBoard * sizeOfTheBoard / 25);
             UpdateGridDisplay();
         }
@@ -61,6 +61,11 @@ namespace CatchGoldsGUI
                 UpdateGridDisplay();
                 UpdatePlayerStats();
                 round++;
+
+                if (player1.GetHealth() <= 0 || player2.GetHealth() <= 0 || round >= 12)
+                {
+                    EndGame();
+                }
             }
             else
             {
@@ -131,15 +136,71 @@ namespace CatchGoldsGUI
 
         private void UpdatePlayerStats()
         {
+            RoundNumber.Text = $"Round Number: {round+1}";
             lblPlayer1Health.Text = $"Player 1 Health: {player1.GetHealth()}";
             lblPlayer1Score.Text = $"Player 1 Score: {player1.GetScore()}";
             lblPlayer2Health.Text = $"Player 2 Health: {player2.GetHealth()}";
             lblPlayer2Score.Text = $"Player 2 Score: {player2.GetScore()}";
         }
 
+        private void EndGame()
+        {
+            string message;
+            if (player1.GetHealth() <= 0)
+            {
+                message = "Player 1 is dead. GAME OVER\n";
+            }
+            else if (player2.GetHealth() <= 0)
+            {
+                message = "Player 2 is dead. GAME OVER\n";
+            }
+            else
+            {
+                message = "Maximum rounds reached. GAME OVER\n";
+            }
+
+            if (player1.GetScore() > player2.GetScore())
+            {
+                message += "PLAYER 1 IS WON CONGRATS!!";
+            }
+            else if (player1.GetScore() < player2.GetScore())
+            {
+                message += "PLAYER 2 IS WON CONGRATS!!";
+            }
+            else
+            {
+                message += "DRAW :/ MAYBE YOU SHOULD PLAY AGAIN";
+            }
+
+            MessageBox.Show(message);
+
+            
+        }
+
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Handle cell click events if needed
+        }
+
+        private void txtXPlayer1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtXPlayer2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPlayer2Health_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtYPlayer2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

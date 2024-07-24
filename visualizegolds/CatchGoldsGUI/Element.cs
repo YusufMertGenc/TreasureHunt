@@ -32,7 +32,7 @@ namespace CatchGoldsGUI
         public Food(int size) : base(size) { }
         public override void Effect(Player player)
         {
-            int effect = player.GetBoardSize() / 6;
+            int effect = player.GetBoardSize() / 4;
             player.AdjustHealth(effect);
         }
     }
@@ -42,7 +42,7 @@ namespace CatchGoldsGUI
         public Wood(int size) : base(size) { }
         public override void Effect(Player player)
         {
-            int effect = player.GetBoardSize() / 8;
+            int effect = player.GetBoardSize() / 4;
             player.AdjustHealth(effect);
         }
     }
@@ -52,7 +52,7 @@ namespace CatchGoldsGUI
         public MedicalSupplies(int size) : base(size) { }
         public override void Effect(Player player)
         {
-            int effect = player.GetBoardSize() / 4;
+            int effect = player.GetBoardSize() / 2;
             player.AdjustHealth(effect);
         }
     }
