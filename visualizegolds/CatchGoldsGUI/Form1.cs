@@ -137,9 +137,9 @@ namespace CatchGoldsGUI
             lblPlayer2Score.Text = $"Player 2 Score: {player2.GetScore()}";
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Handle cell click events if needed
-        }
+        
+        
+        
+        
     }
 }
