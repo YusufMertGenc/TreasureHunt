@@ -132,6 +132,7 @@ namespace CatchGoldsGUI
             // 
             this.RoundNumber.Location = new System.Drawing.Point(673, 31);
             this.RoundNumber.Name = "RoundNumber";
+            this.RoundNumber.ReadOnly = true;
             this.RoundNumber.Size = new System.Drawing.Size(133, 22);
             this.RoundNumber.TabIndex = 10;
             this.RoundNumber.Text = "RoundNumber";
