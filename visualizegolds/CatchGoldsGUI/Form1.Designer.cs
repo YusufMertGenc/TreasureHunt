@@ -36,7 +36,7 @@
             this.txtXPlayer1.Name = "txtXPlayer1";
             this.txtXPlayer1.Size = new System.Drawing.Size(100, 22);
             this.txtXPlayer1.TabIndex = 0;
-            this.txtXPlayer1.TextChanged += new System.EventHandler(this.txtXPlayer1_TextChanged);
+            
             // 
             // txtYPlayer1
             // 
@@ -51,7 +51,7 @@
             this.txtXPlayer2.Name = "txtXPlayer2";
             this.txtXPlayer2.Size = new System.Drawing.Size(100, 22);
             this.txtXPlayer2.TabIndex = 2;
-            this.txtXPlayer2.TextChanged += new System.EventHandler(this.txtXPlayer2_TextChanged);
+            
             // 
             // txtYPlayer2
             // 
@@ -59,7 +59,7 @@
             this.txtYPlayer2.Name = "txtYPlayer2";
             this.txtYPlayer2.Size = new System.Drawing.Size(100, 22);
             this.txtYPlayer2.TabIndex = 3;
-            this.txtYPlayer2.TextChanged += new System.EventHandler(this.txtYPlayer2_TextChanged);
+            
             // 
             // btnSubmit
             // 
@@ -97,7 +97,7 @@
             this.lblPlayer2Health.Size = new System.Drawing.Size(111, 16);
             this.lblPlayer2Health.TabIndex = 7;
             this.lblPlayer2Health.Text = "Player 2 Health: 0";
-            this.lblPlayer2Health.Click += new System.EventHandler(this.lblPlayer2Health_Click);
+            
             // 
             // lblPlayer2Score
             // 

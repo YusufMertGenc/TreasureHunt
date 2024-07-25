@@ -128,6 +128,7 @@ namespace CatchGoldsGUI
                     }
                 default:
                     {
+                        grid.HidedGrid(x, y, 'E');
                         MessageBox.Show("You found Nothing! Unlucky :(");
                         break;
                     }
@@ -177,29 +178,6 @@ namespace CatchGoldsGUI
             
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Handle cell click events if needed
-        }
-
-        private void txtXPlayer1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtXPlayer2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPlayer2Health_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtYPlayer2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

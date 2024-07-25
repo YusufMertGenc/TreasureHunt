@@ -36,12 +36,33 @@ namespace CatchGoldsGUI
             health += adjust;
         }
 
-        public int GetScore() => score; 
-        public void SetScore(int score) => this.score = score;
-        public int GetGoldCount() => goldCount;
-        public void SetGoldCount(int goldCount) => this.goldCount = goldCount;
-        public int GetHealth() => health;
-        public void SetHealth(int health) => this.health = health;
-        public int GetBoardSize() => boardSize;
+        public int GetScore()
+        {
+            return score;
+        }
+        public void SetScore(int score)
+        {
+            this.score = score;
+        }
+        public int GetGoldCount()
+        {
+            return goldCount;
+        }
+        public void SetGoldCount(int goldCount)
+        {
+            this.goldCount = goldCount;
+        }
+        public int GetHealth()
+        {
+            return health;
+        }
+        public void SetHealth(int health)
+        {
+            this.health = health;
+        }
+        public int GetBoardSize()
+        {
+            return boardSize;
+        }
     }
 }
