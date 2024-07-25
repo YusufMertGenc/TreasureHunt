@@ -35,7 +35,7 @@ namespace CatchGoldsGUI
 
         public void ElementDeploy(int numberOfElements)
         {
-            Random rand = new Random();
+           Random rand = new Random();
             for (int i = 0; i < numberOfElements; i++)
             {
                 grid[rand.Next(size), rand.Next(size)] = 'F';
@@ -140,6 +140,11 @@ namespace CatchGoldsGUI
                 grid[rand.Next(size), rand.Next(size)] = 'W';
                 grid[rand.Next(size), rand.Next(size)] = 'G';
             }
+
+
+
+
+
         }
 
         public void Display()
