@@ -25,7 +25,7 @@ namespace CatchGoldsGUI
 
         private void InitializeGame()
         {
-            int sizeOfTheBoard = 5; // Example size, you can make this dynamic
+            int sizeOfTheBoard = 5;
             grid = new Grid(sizeOfTheBoard);
             player1 = new Player(sizeOfTheBoard);
             player2 = new Player(sizeOfTheBoard);
@@ -50,9 +50,13 @@ namespace CatchGoldsGUI
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(txtXPlayer1.Text, out int x1) && int.TryParse(txtYPlayer1.Text, out int y1) &&
-                int.TryParse(txtXPlayer2.Text, out int x2) && int.TryParse(txtYPlayer2.Text, out int y2))
+            if (comboBox1X.SelectedIndex != -1 && comboBox1Y.SelectedIndex != -1 &&
+                comboBox2X.SelectedIndex != -1 && comboBox2Y.SelectedIndex != -1)
             {
+                int x1 = int.Parse(comboBox1X.SelectedItem.ToString());
+                int y1 = int.Parse(comboBox1Y.SelectedItem.ToString());
+                int x2 = int.Parse(comboBox2X.SelectedItem.ToString());
+                int y2 = int.Parse(comboBox2Y.SelectedItem.ToString());
                 // Process player1's choice
                 ProcessChoice(player1, x1, y1);
                 // Process player2's choice
@@ -137,7 +141,7 @@ namespace CatchGoldsGUI
 
         private void UpdatePlayerStats()
         {
-            RoundNumber.Text = $"Round Number: {round+1}";
+            RoundNumber.Text = $"Round {round+1}/12";
             lblPlayer1Health.Text = $"Player 1 Health: {player1.GetHealth()}";
             lblPlayer1Score.Text = $"Player 1 Score: {player1.GetScore()}";
             lblPlayer2Health.Text = $"Player 2 Health: {player2.GetHealth()}";
@@ -170,13 +174,15 @@ namespace CatchGoldsGUI
             }
             else
             {
-                message += "DRAW :/ MAYBE YOU SHOULD PLAY AGAIN";
+                message += "DRAW ";
             }
 
             MessageBox.Show(message);
 
             
         }
+
+       
 
         
     }

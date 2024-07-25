@@ -1,25 +1,28 @@
-﻿namespace CatchGoldsGUI
+﻿using System.Runtime.CompilerServices;
+
+namespace CatchGoldsGUI
 {
     partial class Form1
     {
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.TextBox txtXPlayer1;
-        private System.Windows.Forms.TextBox txtYPlayer1;
-        private System.Windows.Forms.TextBox txtXPlayer2;
-        private System.Windows.Forms.TextBox txtYPlayer2;
+        
+        private System.Windows.Forms.ComboBox comboBox1Y;
+        private System.Windows.Forms.ComboBox comboBox2X;
+        private System.Windows.Forms.ComboBox comboBox2Y;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label lblPlayer1Health;
         private System.Windows.Forms.Label lblPlayer1Score;
         private System.Windows.Forms.Label lblPlayer2Health;
         private System.Windows.Forms.Label lblPlayer2Score;
         private System.Windows.Forms.DataGridView dataGridView1;
+        
+        private System.Windows.Forms.ComboBox comboBox1X;
 
         private void InitializeComponent()
         {
-            this.txtXPlayer1 = new System.Windows.Forms.TextBox();
-            this.txtYPlayer1 = new System.Windows.Forms.TextBox();
-            this.txtXPlayer2 = new System.Windows.Forms.TextBox();
-            this.txtYPlayer2 = new System.Windows.Forms.TextBox();
+            this.comboBox1Y = new System.Windows.Forms.ComboBox();
+            this.comboBox2X = new System.Windows.Forms.ComboBox();
+            this.comboBox2Y = new System.Windows.Forms.ComboBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.lblPlayer1Health = new System.Windows.Forms.Label();
             this.lblPlayer1Score = new System.Windows.Forms.Label();
@@ -27,39 +30,48 @@
             this.lblPlayer2Score = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.RoundNumber = new System.Windows.Forms.TextBox();
+            this.comboBox1X = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtXPlayer1
+            // comboBox1Y
             // 
-            this.txtXPlayer1.Location = new System.Drawing.Point(107, 148);
-            this.txtXPlayer1.Name = "txtXPlayer1";
-            this.txtXPlayer1.Size = new System.Drawing.Size(100, 22);
-            this.txtXPlayer1.TabIndex = 0;
-            
+            this.comboBox1Y.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.comboBox1Y.Location = new System.Drawing.Point(306, 148);
+            this.comboBox1Y.Name = "comboBox1Y";
+            this.comboBox1Y.Size = new System.Drawing.Size(100, 24);
+            this.comboBox1Y.TabIndex = 1;
             // 
-            // txtYPlayer1
+            // comboBox2X
             // 
-            this.txtYPlayer1.Location = new System.Drawing.Point(306, 148);
-            this.txtYPlayer1.Name = "txtYPlayer1";
-            this.txtYPlayer1.Size = new System.Drawing.Size(100, 22);
-            this.txtYPlayer1.TabIndex = 1;
+            this.comboBox2X.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.comboBox2X.Location = new System.Drawing.Point(1127, 148);
+            this.comboBox2X.Name = "comboBox2X";
+            this.comboBox2X.Size = new System.Drawing.Size(100, 24);
+            this.comboBox2X.TabIndex = 2;
             // 
-            // txtXPlayer2
+            // comboBox2Y
             // 
-            this.txtXPlayer2.Location = new System.Drawing.Point(1127, 148);
-            this.txtXPlayer2.Name = "txtXPlayer2";
-            this.txtXPlayer2.Size = new System.Drawing.Size(100, 22);
-            this.txtXPlayer2.TabIndex = 2;
-            
-            // 
-            // txtYPlayer2
-            // 
-            this.txtYPlayer2.Location = new System.Drawing.Point(1334, 148);
-            this.txtYPlayer2.Name = "txtYPlayer2";
-            this.txtYPlayer2.Size = new System.Drawing.Size(100, 22);
-            this.txtYPlayer2.TabIndex = 3;
-            
+            this.comboBox2Y.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.comboBox2Y.Location = new System.Drawing.Point(1334, 148);
+            this.comboBox2Y.Name = "comboBox2Y";
+            this.comboBox2Y.Size = new System.Drawing.Size(100, 24);
+            this.comboBox2Y.TabIndex = 3;
             // 
             // btnSubmit
             // 
@@ -71,7 +83,7 @@
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // lblPlayer1Health 
+            // lblPlayer1Health
             // 
             this.lblPlayer1Health.AutoSize = true;
             this.lblPlayer1Health.Location = new System.Drawing.Point(104, 202);
@@ -97,7 +109,6 @@
             this.lblPlayer2Health.Size = new System.Drawing.Size(111, 16);
             this.lblPlayer2Health.TabIndex = 7;
             this.lblPlayer2Health.Text = "Player 2 Health: 0";
-            
             // 
             // lblPlayer2Score
             // 
@@ -119,11 +130,25 @@
             // 
             // RoundNumber
             // 
-            this.RoundNumber.Location = new System.Drawing.Point(623, 26);
+            this.RoundNumber.Location = new System.Drawing.Point(673, 31);
             this.RoundNumber.Name = "RoundNumber";
-            this.RoundNumber.Size = new System.Drawing.Size(246, 22);
+            this.RoundNumber.Size = new System.Drawing.Size(133, 22);
             this.RoundNumber.TabIndex = 10;
             this.RoundNumber.Text = "RoundNumber";
+            // 
+            // comboBox1X
+            // 
+            this.comboBox1X.FormattingEnabled = true;
+            this.comboBox1X.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.comboBox1X.Location = new System.Drawing.Point(107, 146);
+            this.comboBox1X.Name = "comboBox1X";
+            this.comboBox1X.Size = new System.Drawing.Size(78, 24);
+            this.comboBox1X.TabIndex = 11;
             // 
             // Form1
             // 
@@ -135,10 +160,10 @@
             this.Controls.Add(this.lblPlayer1Score);
             this.Controls.Add(this.lblPlayer1Health);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.txtYPlayer2);
-            this.Controls.Add(this.txtXPlayer2);
-            this.Controls.Add(this.txtYPlayer1);
-            this.Controls.Add(this.txtXPlayer1);
+            this.Controls.Add(this.comboBox2Y);
+            this.Controls.Add(this.comboBox2X);
+            this.Controls.Add(this.comboBox1Y);
+            this.Controls.Add(this.comboBox1X);
             this.Name = "Form1";
             this.Text = "Catch Golds Game";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -147,7 +172,9 @@
 
         }
 
+
         private System.Windows.Forms.TextBox RoundNumber;
     }
+   
 }
 
