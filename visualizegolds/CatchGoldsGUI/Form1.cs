@@ -20,8 +20,9 @@ namespace CatchGoldsGUI
         private int player1X, player1Y, player2X, player2Y;
         private bool player1Turn = true;
 
-        
-          
+        private List<(int, int)> player1Selections = new List<(int, int)>();
+        private List<(int, int)> player2Selections = new List<(int, int)>();
+
         public Form1()
         {
             InitializeComponent();
@@ -37,8 +38,26 @@ namespace CatchGoldsGUI
             round = 0;
             
             grid.ElementDeploy(2*sizeOfTheBoard*sizeOfTheBoard/25);
+            SetupDataGridView();
             UpdateGridDisplay();
         }
+
+        private void SetupDataGridView()
+        {
+            
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            dataGridView1.MultiSelect = false;
+           dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+         
+           
+        }
+
 
         private void UpdateGridDisplay()
         {
@@ -56,12 +75,28 @@ namespace CatchGoldsGUI
             for (int j = 0; j < grid.GetSize(); j++)
             {
                 dataGridView1.Columns[j].SortMode = DataGridViewColumnSortMode.NotSortable;
+                dataGridView1.Columns[j].Width = dataGridView1.Width / grid.GetSize();
+            }
+
+            for (int i = 0; i < grid.GetSize(); i++)
+            {
+                dataGridView1.Rows[i].Height = dataGridView1.Height / grid.GetSize();
             }
         }
 
         private void UpdateCell(int i, int j)
         {
             dataGridView1.Rows[i].Cells[j].Value = grid.GetGridValue(i, j);
+
+            if (player1Selections.Contains((i, j)))
+            {
+                dataGridView1.Rows[i].Cells[j].Style.BackColor = Color.Yellow;
+            }
+            else if (player2Selections.Contains((i, j)))
+            {
+                dataGridView1.Rows[i].Cells[j].Style.BackColor = Color.DarkCyan;
+            }
+
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -209,6 +244,7 @@ namespace CatchGoldsGUI
                     player1Y = e.ColumnIndex;
                     Xcoordinate1.Text = $"X: {player1X}";
                     YCoordinate1.Text = $"Y: {player1Y}";
+                    player1Selections.Add((player1X, player1Y));
                     player1Turn = false; // Switch turn to player 2
                 }
                 else
@@ -217,6 +253,7 @@ namespace CatchGoldsGUI
                     player2Y = e.ColumnIndex;
                     XCoordinate2.Text = $"X: {player2X}";
                     YCoordinate2.Text = $"Y: {player2Y}";
+                    player2Selections.Add((player2X, player2Y));
                     player1Turn = true; // Switch turn to player 1
                 }
             }

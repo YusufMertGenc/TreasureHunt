@@ -182,4 +182,8 @@ namespace CatchGoldsGUI
         public int GetSize() => size; 
         public char GetGridValue(int x, int y) => hidedGrid[x, y];
     }
+
+
+
+
 }
