@@ -31,6 +31,7 @@ namespace CatchGoldsGUI
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -195,7 +196,7 @@ namespace CatchGoldsGUI
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataGridView1.GridColor = System.Drawing.Color.Green;
+            this.dataGridView1.GridColor = System.Drawing.Color.DarkGreen;
             this.dataGridView1.Location = new System.Drawing.Point(497, 219);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridView1.Name = "dataGridView1";
@@ -205,6 +206,7 @@ namespace CatchGoldsGUI
             this.dataGridView1.Size = new System.Drawing.Size(488, 245);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.btnSubmit_Click);
             // 
             // Form1
             // 

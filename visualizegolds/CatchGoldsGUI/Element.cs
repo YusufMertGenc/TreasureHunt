@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CatchGoldsGUI 
+﻿namespace CatchGoldsGUI
 {
     public abstract class Element
     {
@@ -56,7 +50,7 @@ namespace CatchGoldsGUI
             player.AdjustHealth(effect);
         }
     }
- 
+
     public abstract class WildAnimals : Element
     {
         public WildAnimals(int size, char represent, char effect) : base(size)

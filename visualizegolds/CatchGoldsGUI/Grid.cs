@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CatchGoldsGUI
 {
@@ -13,7 +9,7 @@ namespace CatchGoldsGUI
         private readonly char[,] hidedGrid;
 
         public Grid(int size)
-        { 
+        {
             this.size = size;
             grid = new char[size, size];
             hidedGrid = new char[size, size];
@@ -22,7 +18,7 @@ namespace CatchGoldsGUI
 
         private void InitializeGrid()
         {
-           
+
             for (int i = 0; i < size; i++)
             {
                 for (int j = 0; j < size; j++)
@@ -35,7 +31,7 @@ namespace CatchGoldsGUI
 
         public void ElementDeploy(int numberOfElements)
         {
-           Random rand = new Random();
+            Random rand = new Random();
             for (int i = 0; i < numberOfElements; i++)
             {
                 grid[rand.Next(size), rand.Next(size)] = 'F';
@@ -178,8 +174,8 @@ namespace CatchGoldsGUI
             }
         }
 
-        
-        public int GetSize() => size; 
+
+        public int GetSize() => size;
         public char GetGridValue(int x, int y) => hidedGrid[x, y];
     }
 

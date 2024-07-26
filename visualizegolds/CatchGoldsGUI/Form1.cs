@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CatchGoldsGUI
@@ -36,15 +31,15 @@ namespace CatchGoldsGUI
             player1 = new Player(sizeOfTheBoard);
             player2 = new Player(sizeOfTheBoard);
             round = 0;
-            
-            grid.ElementDeploy(2*sizeOfTheBoard*sizeOfTheBoard/25);
+
+            grid.ElementDeploy(2 * sizeOfTheBoard * sizeOfTheBoard / 25);
             SetupDataGridView();
             UpdateGridDisplay();
         }
 
         private void SetupDataGridView()
         {
-            
+
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
@@ -52,10 +47,9 @@ namespace CatchGoldsGUI
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect;
             dataGridView1.MultiSelect = false;
-           dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-         
-           
+            dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.DefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.DefaultCellStyle.BackColor = Color.DarkSlateGray;
         }
 
 
@@ -90,7 +84,7 @@ namespace CatchGoldsGUI
 
             if (player1Selections.Contains((i, j)))
             {
-                dataGridView1.Rows[i].Cells[j].Style.BackColor = Color.Yellow;
+                dataGridView1.Rows[i].Cells[j].Style.BackColor = Color.Red;
             }
             else if (player2Selections.Contains((i, j)))
             {
@@ -124,7 +118,7 @@ namespace CatchGoldsGUI
 
         }
 
- 
+
 
 
         private void ProcessChoice(Player player, int x, int y)
@@ -137,7 +131,7 @@ namespace CatchGoldsGUI
                         Food food = new Food(player.GetBoardSize());
                         food.Effect(player);
                         grid.HidedGrid(x, y, 'F');
-                        MessageBox.Show("You found Food! (this means your health will increase.)");
+                        MessageBox.Show("You found 🍖! (this means your health will increase.)");
                         break;
                     }
                 case 'I':
@@ -191,7 +185,7 @@ namespace CatchGoldsGUI
 
         private void UpdatePlayerStats()
         {
-            RoundNumber.Text = $"Round {round+1}/12";
+            RoundNumber.Text = $"Round {round + 1}/12";
             Health1.Text = $"Player 1 Health: {player1.GetHealth()}";
             Score1.Text = $"Player 1 Score: {player1.GetScore()}";
             Health2.Text = $"Player 2 Health: {player2.GetHealth()}";
@@ -229,14 +223,14 @@ namespace CatchGoldsGUI
 
             MessageBox.Show(message);
 
-            
+
         }
 
         private void dataGridView1_CellClick(object senderi, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                
+
 
                 if (player1Turn)
                 {

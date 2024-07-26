@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CatchGoldsGUI
+﻿namespace CatchGoldsGUI
 {
     public class Player
     {
@@ -14,7 +8,7 @@ namespace CatchGoldsGUI
         private readonly int boardSize;
 
         public Player(int boardSize)
-        { 
+        {
             this.boardSize = boardSize;
             this.health = 2 * boardSize;
             score = 0;
