@@ -5,177 +5,235 @@ namespace CatchGoldsGUI
     partial class Form1
     {
         private System.ComponentModel.IContainer components = null;
-        
-        private System.Windows.Forms.ComboBox comboBox1Y;
-        private System.Windows.Forms.ComboBox comboBox2X;
-        private System.Windows.Forms.ComboBox comboBox2Y;
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Label lblPlayer1Health;
-        private System.Windows.Forms.Label lblPlayer1Score;
-        private System.Windows.Forms.Label lblPlayer2Health;
-        private System.Windows.Forms.Label lblPlayer2Score;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        
-        private System.Windows.Forms.ComboBox comboBox1X;
 
         private void InitializeComponent()
         {
-            this.comboBox1Y = new System.Windows.Forms.ComboBox();
-            this.comboBox2X = new System.Windows.Forms.ComboBox();
-            this.comboBox2Y = new System.Windows.Forms.ComboBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            this.lblPlayer1Health = new System.Windows.Forms.Label();
-            this.lblPlayer1Score = new System.Windows.Forms.Label();
-            this.lblPlayer2Health = new System.Windows.Forms.Label();
-            this.lblPlayer2Score = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Xcoordinate1 = new System.Windows.Forms.Label();
+            this.Score1 = new System.Windows.Forms.Label();
+            this.Health1 = new System.Windows.Forms.Label();
+            this.YCoordinate1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.RoundNumber = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Score2 = new System.Windows.Forms.Label();
+            this.Health2 = new System.Windows.Forms.Label();
+            this.YCoordinate2 = new System.Windows.Forms.Label();
+            this.XCoordinate2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.RoundNumber = new System.Windows.Forms.TextBox();
-            this.comboBox1X = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1Y
+            // tableLayoutPanel1
             // 
-            this.comboBox1Y.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.comboBox1Y.Location = new System.Drawing.Point(306, 148);
-            this.comboBox1Y.Name = "comboBox1Y";
-            this.comboBox1Y.Size = new System.Drawing.Size(100, 24);
-            this.comboBox1Y.TabIndex = 1;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.RoundNumber, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button1, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.70711F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.98326F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.10739F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1484, 717);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // comboBox2X
+            // groupBox1
             // 
-            this.comboBox2X.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.comboBox2X.Location = new System.Drawing.Point(1127, 148);
-            this.comboBox2X.Name = "comboBox2X";
-            this.comboBox2X.Size = new System.Drawing.Size(100, 24);
-            this.comboBox2X.TabIndex = 2;
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.Xcoordinate1);
+            this.groupBox1.Controls.Add(this.Score1);
+            this.groupBox1.Controls.Add(this.Health1);
+            this.groupBox1.Controls.Add(this.YCoordinate1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(101, 269);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(291, 146);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Player 1";
             // 
-            // comboBox2Y
+            // Xcoordinate1
             // 
-            this.comboBox2Y.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.comboBox2Y.Location = new System.Drawing.Point(1334, 148);
-            this.comboBox2Y.Name = "comboBox2Y";
-            this.comboBox2Y.Size = new System.Drawing.Size(100, 24);
-            this.comboBox2Y.TabIndex = 3;
+            this.Xcoordinate1.AutoSize = true;
+            this.Xcoordinate1.Location = new System.Drawing.Point(27, 36);
+            this.Xcoordinate1.Name = "Xcoordinate1";
+            this.Xcoordinate1.Size = new System.Drawing.Size(85, 16);
+            this.Xcoordinate1.TabIndex = 4;
+            this.Xcoordinate1.Text = "X-Coordinate";
+            this.Xcoordinate1.Click += new System.EventHandler(this.label10_Click);
+            this.Xcoordinate1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Xcoordinate1_MouseClick);
             // 
-            // btnSubmit
+            // Score1
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(645, 105);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(206, 23);
-            this.btnSubmit.TabIndex = 4;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.Score1.AutoSize = true;
+            this.Score1.Location = new System.Drawing.Point(147, 84);
+            this.Score1.Name = "Score1";
+            this.Score1.Size = new System.Drawing.Size(108, 16);
+            this.Score1.TabIndex = 3;
+            this.Score1.Text = "Player 1 Score: 0";
             // 
-            // lblPlayer1Health
+            // Health1
             // 
-            this.lblPlayer1Health.AutoSize = true;
-            this.lblPlayer1Health.Location = new System.Drawing.Point(104, 202);
-            this.lblPlayer1Health.Name = "lblPlayer1Health";
-            this.lblPlayer1Health.Size = new System.Drawing.Size(111, 16);
-            this.lblPlayer1Health.TabIndex = 5;
-            this.lblPlayer1Health.Text = "Player 1 Health: 0";
+            this.Health1.AutoSize = true;
+            this.Health1.Location = new System.Drawing.Point(34, 84);
+            this.Health1.Name = "Health1";
+            this.Health1.Size = new System.Drawing.Size(111, 16);
+            this.Health1.TabIndex = 2;
+            this.Health1.Text = "Player 1 Health: 0";
             // 
-            // lblPlayer1Score
+            // YCoordinate1
             // 
-            this.lblPlayer1Score.AutoSize = true;
-            this.lblPlayer1Score.Location = new System.Drawing.Point(303, 202);
-            this.lblPlayer1Score.Name = "lblPlayer1Score";
-            this.lblPlayer1Score.Size = new System.Drawing.Size(108, 16);
-            this.lblPlayer1Score.TabIndex = 6;
-            this.lblPlayer1Score.Text = "Player 1 Score: 0";
+            this.YCoordinate1.AutoSize = true;
+            this.YCoordinate1.Location = new System.Drawing.Point(147, 36);
+            this.YCoordinate1.Name = "YCoordinate1";
+            this.YCoordinate1.Size = new System.Drawing.Size(86, 16);
+            this.YCoordinate1.TabIndex = 1;
+            this.YCoordinate1.Text = "Y-Coordinate";
             // 
-            // lblPlayer2Health
+            // label2
             // 
-            this.lblPlayer2Health.AutoSize = true;
-            this.lblPlayer2Health.Location = new System.Drawing.Point(1124, 202);
-            this.lblPlayer2Health.Name = "lblPlayer2Health";
-            this.lblPlayer2Health.Size = new System.Drawing.Size(111, 16);
-            this.lblPlayer2Health.TabIndex = 7;
-            this.lblPlayer2Health.Text = "Player 2 Health: 0";
-            // 
-            // lblPlayer2Score
-            // 
-            this.lblPlayer2Score.AutoSize = true;
-            this.lblPlayer2Score.Location = new System.Drawing.Point(1331, 202);
-            this.lblPlayer2Score.Name = "lblPlayer2Score";
-            this.lblPlayer2Score.Size = new System.Drawing.Size(108, 16);
-            this.lblPlayer2Score.TabIndex = 8;
-            this.lblPlayer2Score.Text = "Player 2 Score: 0";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(497, 148);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(540, 235);
-            this.dataGridView1.TabIndex = 9;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(34, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 16);
+            this.label2.TabIndex = 0;
             // 
             // RoundNumber
             // 
-            this.RoundNumber.Location = new System.Drawing.Point(673, 31);
+            this.RoundNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.RoundNumber.AutoSize = true;
+            this.RoundNumber.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.RoundNumber.Location = new System.Drawing.Point(635, 82);
             this.RoundNumber.Name = "RoundNumber";
-            this.RoundNumber.ReadOnly = true;
-            this.RoundNumber.Size = new System.Drawing.Size(133, 22);
-            this.RoundNumber.TabIndex = 10;
-            this.RoundNumber.Text = "RoundNumber";
+            this.RoundNumber.Size = new System.Drawing.Size(211, 49);
+            this.RoundNumber.TabIndex = 1;
+            this.RoundNumber.Text = "Round 0/12";
             // 
-            // comboBox1X
+            // button1
             // 
-            this.comboBox1X.FormattingEnabled = true;
-            this.comboBox1X.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.comboBox1X.Location = new System.Drawing.Point(107, 146);
-            this.comboBox1X.Name = "comboBox1X";
-            this.comboBox1X.Size = new System.Drawing.Size(78, 24);
-            this.comboBox1X.TabIndex = 11;
+            this.button1.BackColor = System.Drawing.Color.SlateGray;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(494, 471);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(494, 137);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "SUBMIT";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox2.Controls.Add(this.Score2);
+            this.groupBox2.Controls.Add(this.Health2);
+            this.groupBox2.Controls.Add(this.YCoordinate2);
+            this.groupBox2.Controls.Add(this.XCoordinate2);
+            this.groupBox2.Location = new System.Drawing.Point(1090, 269);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(291, 146);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Player 2";
+            // 
+            // Score2
+            // 
+            this.Score2.AutoSize = true;
+            this.Score2.Location = new System.Drawing.Point(147, 84);
+            this.Score2.Name = "Score2";
+            this.Score2.Size = new System.Drawing.Size(108, 16);
+            this.Score2.TabIndex = 5;
+            this.Score2.Text = "Player 2 Score: 0";
+            // 
+            // Health2
+            // 
+            this.Health2.AutoSize = true;
+            this.Health2.Location = new System.Drawing.Point(34, 84);
+            this.Health2.Name = "Health2";
+            this.Health2.Size = new System.Drawing.Size(111, 16);
+            this.Health2.TabIndex = 4;
+            this.Health2.Text = "Player 2 Health: 0";
+            // 
+            // YCoordinate2
+            // 
+            this.YCoordinate2.AutoSize = true;
+            this.YCoordinate2.Location = new System.Drawing.Point(147, 36);
+            this.YCoordinate2.Name = "YCoordinate2";
+            this.YCoordinate2.Size = new System.Drawing.Size(86, 16);
+            this.YCoordinate2.TabIndex = 1;
+            this.YCoordinate2.Text = "Y-Coordinate";
+            // 
+            // XCoordinate2
+            // 
+            this.XCoordinate2.AutoSize = true;
+            this.XCoordinate2.Location = new System.Drawing.Point(34, 36);
+            this.XCoordinate2.Name = "XCoordinate2";
+            this.XCoordinate2.Size = new System.Drawing.Size(85, 16);
+            this.XCoordinate2.TabIndex = 0;
+            this.XCoordinate2.Text = "X-Coordinate";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(497, 216);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(488, 252);
+            this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(1484, 717);
-            this.Controls.Add(this.RoundNumber);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.lblPlayer2Score);
-            this.Controls.Add(this.lblPlayer2Health);
-            this.Controls.Add(this.lblPlayer1Score);
-            this.Controls.Add(this.lblPlayer1Health);
-            this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.comboBox2Y);
-            this.Controls.Add(this.comboBox2X);
-            this.Controls.Add(this.comboBox1Y);
-            this.Controls.Add(this.comboBox1X);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
             this.Text = "Catch Golds Game";
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
-
-        private System.Windows.Forms.TextBox RoundNumber;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label RoundNumber;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label Score1;
+        private System.Windows.Forms.Label Health1;
+        private System.Windows.Forms.Label YCoordinate1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label Score2;
+        private System.Windows.Forms.Label Health2;
+        private System.Windows.Forms.Label YCoordinate2;
+        private System.Windows.Forms.Label XCoordinate2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label Xcoordinate1;
     }
-   
+
 }
 

@@ -16,7 +16,12 @@ namespace CatchGoldsGUI
         private Player player1;
         private Player player2;
         private int round;
+
+        private int player1X, player1Y, player2X, player2Y;
+        private bool player1Turn = true;
+
         
+          
         public Form1()
         {
             InitializeComponent();
@@ -39,43 +44,53 @@ namespace CatchGoldsGUI
         {
             dataGridView1.RowCount = grid.GetSize();
             dataGridView1.ColumnCount = grid.GetSize();
+
             for (int i = 0; i < grid.GetSize(); i++)
             {
                 for (int j = 0; j < grid.GetSize(); j++)
                 {
-                    dataGridView1.Rows[i].Cells[j].Value = grid.GetGridValue(i, j);
+                    UpdateCell(i, j);
                 }
             }
+
+            for (int j = 0; j < grid.GetSize(); j++)
+            {
+                dataGridView1.Columns[j].SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+        }
+
+        private void UpdateCell(int i, int j)
+        {
+            dataGridView1.Rows[i].Cells[j].Value = grid.GetGridValue(i, j);
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (comboBox1X.SelectedIndex != -1 && comboBox1Y.SelectedIndex != -1 &&
-                comboBox2X.SelectedIndex != -1 && comboBox2Y.SelectedIndex != -1)
-            {
-                int x1 = int.Parse(comboBox1X.SelectedItem.ToString());
-                int y1 = int.Parse(comboBox1Y.SelectedItem.ToString());
-                int x2 = int.Parse(comboBox2X.SelectedItem.ToString());
-                int y2 = int.Parse(comboBox2Y.SelectedItem.ToString());
-                // Process player1's choice
-                ProcessChoice(player1, x1, y1);
-                // Process player2's choice
-                ProcessChoice(player2, x2, y2);
 
-                UpdateGridDisplay();
-                UpdatePlayerStats();
-                round++;
 
-                if (player1.GetHealth() <= 0 || player2.GetHealth() <= 0 || round >= 12)
-                {
-                    EndGame();
-                }
-            }
-            else
+            // Process player1's choice
+            ProcessChoice(player1, player1X, player1Y);
+            // Process player2's choice
+            ProcessChoice(player2, player2X, player2Y);
+
+            UpdateCell(player1X, player1Y);
+            UpdateCell(player2X, player2Y);
+            UpdatePlayerStats();
+            round++;
+
+            if (player1.GetHealth() <= 0 || player2.GetHealth() <= 0 || round >= 12)
             {
-                MessageBox.Show("Invalid coordinates entered. Please enter valid numbers.");
+                EndGame();
             }
+
+            player1Turn = true; // Reset turn for next round
+
+
+
         }
+
+ 
+
 
         private void ProcessChoice(Player player, int x, int y)
         {
@@ -142,10 +157,10 @@ namespace CatchGoldsGUI
         private void UpdatePlayerStats()
         {
             RoundNumber.Text = $"Round {round+1}/12";
-            lblPlayer1Health.Text = $"Player 1 Health: {player1.GetHealth()}";
-            lblPlayer1Score.Text = $"Player 1 Score: {player1.GetScore()}";
-            lblPlayer2Health.Text = $"Player 2 Health: {player2.GetHealth()}";
-            lblPlayer2Score.Text = $"Player 2 Score: {player2.GetScore()}";
+            Health1.Text = $"Player 1 Health: {player1.GetHealth()}";
+            Score1.Text = $"Player 1 Score: {player1.GetScore()}";
+            Health2.Text = $"Player 2 Health: {player2.GetHealth()}";
+            Score2.Text = $"Player 2 Score: {player2.GetScore()}";
         }
 
         private void EndGame()
@@ -182,8 +197,39 @@ namespace CatchGoldsGUI
             
         }
 
-       
+        private void dataGridView1_CellClick(object senderi, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                int x = e.RowIndex;
+                int y = e.ColumnIndex;
 
-        
+                if (player1Turn)
+                {
+                    player1X = e.RowIndex;
+                    player1Y = e.ColumnIndex;
+                    Xcoordinate1.Text = $"X: {player1X}";
+                    YCoordinate1.Text = $"Y: {player1Y}";
+                    player1Turn = false; // Switch turn to player 2
+                }
+                else
+                {
+                    player2X = e.RowIndex;
+                    player2Y = e.ColumnIndex;
+                    XCoordinate2.Text = $"X: {player2X}";
+                    YCoordinate2.Text = $"Y: {player2Y}";
+                    player1Turn = true; // Switch turn to player 1
+                }
+            }
+        }
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Xcoordinate1_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }
