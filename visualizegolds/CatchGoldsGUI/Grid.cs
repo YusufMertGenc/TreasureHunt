@@ -8,9 +8,9 @@ namespace CatchGoldsGUI
 {
     public class Grid
     {
-        private int size;
-        private char[,] grid;
-        private char[,] hidedGrid;
+        private readonly int size;
+        private readonly char[,] grid;
+        private readonly char[,] hidedGrid;
 
         public Grid(int size)
         { 
@@ -22,7 +22,7 @@ namespace CatchGoldsGUI
 
         private void InitializeGrid()
         {
-            Random rand = new Random();
+           
             for (int i = 0; i < size; i++)
             {
                 for (int j = 0; j < size; j++)

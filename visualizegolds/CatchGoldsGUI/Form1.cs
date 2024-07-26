@@ -201,8 +201,7 @@ namespace CatchGoldsGUI
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                int x = e.RowIndex;
-                int y = e.ColumnIndex;
+                
 
                 if (player1Turn)
                 {

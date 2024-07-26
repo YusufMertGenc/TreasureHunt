@@ -11,7 +11,7 @@ namespace CatchGoldsGUI
         private int score;
         private int goldCount;
         private int health;
-        private int boardSize;
+        private readonly int boardSize;
 
         public Player(int boardSize)
         { 
