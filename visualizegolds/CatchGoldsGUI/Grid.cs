@@ -5,14 +5,14 @@ namespace CatchGoldsGUI
     public class Grid
     {
         private readonly int size;
-        private readonly char[,] grid;
-        private readonly char[,] hidedGrid;
+        private readonly string[,] grid;
+        private readonly string[,] hidedGrid;
 
         public Grid(int size)
         {
             this.size = size;
-            grid = new char[size, size];
-            hidedGrid = new char[size, size];
+            grid = new string[size, size];
+            hidedGrid = new string[size, size];
             InitializeGrid();
         }
 
@@ -23,8 +23,8 @@ namespace CatchGoldsGUI
             {
                 for (int j = 0; j < size; j++)
                 {
-                    grid[i, j] = '★';
-                    hidedGrid[i, j] = '★';
+                    grid[i, j] = "★";
+                    hidedGrid[i, j] = "★";
                 }
             }
         }
@@ -34,11 +34,11 @@ namespace CatchGoldsGUI
             Random rand = new Random();
             for (int i = 0; i < numberOfElements; i++)
             {
-                grid[rand.Next(size), rand.Next(size)] = 'F';
+                grid[rand.Next(size), rand.Next(size)] = "🍖";
 
                 int tempPlaceX = rand.Next(size);
                 int tempPlaceY = rand.Next(size);
-                grid[tempPlaceX, tempPlaceY] = 'I';
+                grid[tempPlaceX, tempPlaceY] = "🌳";
 
                 int randomPlacement = rand.Next(2);
 
@@ -46,45 +46,45 @@ namespace CatchGoldsGUI
                 {
                     if (tempPlaceX == size - 1)
                     {
-                        grid[tempPlaceX - 1, tempPlaceY] = 'I';
+                        grid[tempPlaceX - 1, tempPlaceY] = "🌳";
                     }
                     else
                     {
-                        grid[tempPlaceX + 1, tempPlaceY] = 'I';
+                        grid[tempPlaceX + 1, tempPlaceY] = "🌳";
                     }
                 }
                 else if (randomPlacement == 1)
                 {
                     if (tempPlaceY == size - 1)
                     {
-                        grid[tempPlaceX, tempPlaceY - 1] = 'I';
+                        grid[tempPlaceX, tempPlaceY - 1] = "🌳";
                     }
                     else
                     {
-                        grid[tempPlaceX, tempPlaceY + 1] = 'I';
+                        grid[tempPlaceX, tempPlaceY + 1] = "🌳";
                     }
                 }
                 else
                 {
                     if (tempPlaceX == 0 && tempPlaceY == 0)
                     {
-                        grid[tempPlaceX + 1, tempPlaceY + 1] = 'I';
+                        grid[tempPlaceX + 1, tempPlaceY + 1] = "🌳";
                     }
                     else if (tempPlaceX == size && tempPlaceY == 0)
                     {
-                        grid[tempPlaceX - 1, tempPlaceY + 1] = 'I';
+                        grid[tempPlaceX - 1, tempPlaceY + 1] = "🌳";
                     }
                     else if (tempPlaceX == 0 && tempPlaceY == size)
                     {
-                        grid[tempPlaceX + 1, tempPlaceY - 1] = 'I';
+                        grid[tempPlaceX + 1, tempPlaceY - 1] = "🌳";
                     }
                     else if (tempPlaceX == size && tempPlaceY == size)
                     {
-                        grid[tempPlaceX - 1, tempPlaceY - 1] = 'I';
+                        grid[tempPlaceX - 1, tempPlaceY - 1] = "🌳";
                     }
                 }
 
-                grid[rand.Next(size), rand.Next(size)] = 'S';
+                grid[rand.Next(size), rand.Next(size)] = "💊";
 
                 if (i % 2 == 0)
                 {
@@ -93,48 +93,48 @@ namespace CatchGoldsGUI
                     int coordinateX = rand.Next(size);
                     int coordinateY = rand.Next(size);
 
-                    grid[coordinateX, coordinateY] = 'B';
+                    grid[coordinateX, coordinateY] = "🐻";
 
                     if (randomPlacement1 == 1)
                     {
                         if (coordinateX == 0)
                         {
-                            grid[coordinateX + 1, coordinateY] = 'B';
-                            grid[coordinateX + 2, coordinateY] = 'B';
+                            grid[coordinateX + 1, coordinateY] = "🐻";
+                            grid[coordinateX + 2, coordinateY] = "🐻";
                         }
                         else if (coordinateX == size - 1)
                         {
-                            grid[coordinateX - 1, coordinateY] = 'B';
-                            grid[coordinateX - 2, coordinateY] = 'B';
+                            grid[coordinateX - 1, coordinateY] = "🐻";
+                            grid[coordinateX - 2, coordinateY] = "🐻";
                         }
                         else
                         {
-                            grid[coordinateX - 1, coordinateY] = 'B';
-                            grid[coordinateX + 1, coordinateY] = 'B';
+                            grid[coordinateX - 1, coordinateY] = "🐻";
+                            grid[coordinateX + 1, coordinateY] = "🐻";
                         }
                     }
                     else if (randomPlacement1 == 0)
                     {
                         if (coordinateY == 0)
                         {
-                            grid[coordinateX, coordinateY + 1] = 'B';
-                            grid[coordinateX, coordinateY + 2] = 'B';
+                            grid[coordinateX, coordinateY + 1] = "🐻";
+                            grid[coordinateX, coordinateY + 2] = "🐻";
                         }
                         else if (coordinateY == size - 1)
                         {
-                            grid[coordinateX, coordinateY - 1] = 'B';
-                            grid[coordinateX, coordinateY - 2] = 'B';
+                            grid[coordinateX, coordinateY - 1] = "🐻";
+                            grid[coordinateX, coordinateY - 2] = "🐻";
                         }
                         else
                         {
-                            grid[coordinateX, coordinateY - 1] = 'B';
-                            grid[coordinateX, coordinateY + 1] = 'B';
+                            grid[coordinateX, coordinateY - 1] = "🐻";
+                            grid[coordinateX, coordinateY + 1] = "🐻";
                         }
                     }
                 }
 
-                grid[rand.Next(size), rand.Next(size)] = 'W';
-                grid[rand.Next(size), rand.Next(size)] = 'G';
+                grid[rand.Next(size), rand.Next(size)] = "🐺";
+                grid[rand.Next(size), rand.Next(size)] = "🧈";
             }
 
 
@@ -155,9 +155,9 @@ namespace CatchGoldsGUI
             }
         }
 
-        public char Choice(int x, int y) => grid[x, y];
+        public string Choice(int x, int y) => grid[x, y];
 
-        public void HidedGrid(int x, int y, char foundChar)
+        public void HidedGrid(int x, int y, string foundChar)
         {
             hidedGrid[x, y] = foundChar;
         }
@@ -176,7 +176,7 @@ namespace CatchGoldsGUI
 
 
         public int GetSize() => size;
-        public char GetGridValue(int x, int y) => hidedGrid[x, y];
+        public string GetGridValue(int x, int y) => hidedGrid[x, y];
     }
 
 

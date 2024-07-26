@@ -50,6 +50,7 @@ namespace CatchGoldsGUI
             dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.DefaultCellStyle.ForeColor = Color.White;
             dataGridView1.DefaultCellStyle.BackColor = Color.DarkSlateGray;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.Single;
         }
 
 
@@ -84,7 +85,7 @@ namespace CatchGoldsGUI
 
             if (player1Selections.Contains((i, j)))
             {
-                dataGridView1.Rows[i].Cells[j].Style.BackColor = Color.Red;
+                dataGridView1.Rows[i].Cells[j].Style.BackColor = Color.YellowGreen;
             }
             else if (player2Selections.Contains((i, j)))
             {
@@ -123,61 +124,61 @@ namespace CatchGoldsGUI
 
         private void ProcessChoice(Player player, int x, int y)
         {
-            char choice = grid.Choice(x, y);
+            string choice = grid.Choice(x, y);
             switch (choice)
             {
-                case 'F':
+                case "🍖":
                     {
                         Food food = new Food(player.GetBoardSize());
                         food.Effect(player);
-                        grid.HidedGrid(x, y, 'F');
-                        MessageBox.Show("You found 🍖! (this means your health will increase.)");
+                        grid.HidedGrid(x, y, "🍖");
+                        MessageBox.Show("You found Food! (health will increase.)");
                         break;
                     }
-                case 'I':
+                case "🌳":
                     {
                         Wood wood = new Wood(player.GetBoardSize());
                         wood.Effect(player);
-                        grid.HidedGrid(x, y, 'I');
-                        MessageBox.Show("You found Wood! (this means your health will increase.)");
+                        grid.HidedGrid(x, y, "🌳");
+                        MessageBox.Show("You found Wood! (health will increase.)");
                         break;
                     }
-                case 'S':
+                case "💊":
                     {
                         MedicalSupplies medic = new MedicalSupplies(player.GetBoardSize());
                         medic.Effect(player);
-                        grid.HidedGrid(x, y, 'S');
-                        MessageBox.Show("You found medical supplies! (this means your health will increase.)");
+                        grid.HidedGrid(x, y, "💊");
+                        MessageBox.Show("You found medical supplies! (health will increase.)");
                         break;
                     }
-                case 'W':
+                case "🐺":
                     {
                         Wolf wolf = new Wolf(player.GetBoardSize());
                         wolf.Effect(player);
-                        grid.HidedGrid(x, y, 'W');
-                        MessageBox.Show("Ooops! You found a wolf!! (this means your health will decrease!)");
+                        grid.HidedGrid(x, y, "🐺");
+                        MessageBox.Show("Ooops! You found a wolf!! (health will decrease!)");
                         break;
                     }
-                case 'B':
+                case "🐻":
                     {
                         Bear bear = new Bear(player.GetBoardSize());
                         bear.Effect(player);
-                        grid.HidedGrid(x, y, 'B');
-                        MessageBox.Show("Ooops! You found a bear!! (this means your health will decrease!)");
+                        grid.HidedGrid(x, y, "🐻");
+                        MessageBox.Show("Ooops! You found a bear!! (health will decrease!)");
                         break;
                     }
-                case 'G':
+                case "🧈":
                     {
                         Gold gold = new Gold();
                         gold.Effect(player);
-                        grid.HidedGrid(x, y, 'G');
-                        MessageBox.Show("You found GOLD!!! (this means your score will increase.)");
+                        grid.HidedGrid(x, y, "🧈");
+                        MessageBox.Show("You found GOLD!!! (score will increase.)");
                         break;
                     }
                 default:
                     {
-                        grid.HidedGrid(x, y, 'E');
-                        MessageBox.Show("You found Nothing! Unlucky :(");
+                        grid.HidedGrid(x, y, "Empty");
+                        MessageBox.Show("You found Nothing!");
                         break;
                     }
             }
@@ -226,6 +227,11 @@ namespace CatchGoldsGUI
 
         }
 
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void dataGridView1_CellClick(object senderi, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -250,6 +256,7 @@ namespace CatchGoldsGUI
                     player2Selections.Add((player2X, player2Y));
                     player1Turn = true; // Switch turn to player 1
                 }
+                UpdateCell(e.RowIndex, e.ColumnIndex);
             }
         }
         private void label10_Click(object sender, EventArgs e)
