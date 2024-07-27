@@ -134,7 +134,7 @@ namespace CatchGoldsGUI
                 }
 
                 grid[rand.Next(size), rand.Next(size)] = "🐺";
-                grid[rand.Next(size), rand.Next(size)] = "🧈";
+                grid[rand.Next(size), rand.Next(size)] = "🥇";
             }
 
 

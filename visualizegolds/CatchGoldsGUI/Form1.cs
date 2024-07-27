@@ -51,6 +51,9 @@ namespace CatchGoldsGUI
             dataGridView1.DefaultCellStyle.ForeColor = Color.White;
             dataGridView1.DefaultCellStyle.BackColor = Color.DarkSlateGray;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            dataGridView1.DefaultCellStyle.Font = new Font("Calibri", 8F, GraphicsUnit.Point);
+            
+            
         }
 
 
@@ -82,10 +85,12 @@ namespace CatchGoldsGUI
         private void UpdateCell(int i, int j)
         {
             dataGridView1.Rows[i].Cells[j].Value = grid.GetGridValue(i, j);
+            dataGridView1.Rows[i].Cells[j].Style.Font = new Font("Calibri", 15F, GraphicsUnit.Point);
 
             if (player1Selections.Contains((i, j)))
             {
                 dataGridView1.Rows[i].Cells[j].Style.BackColor = Color.YellowGreen;
+                
             }
             else if (player2Selections.Contains((i, j)))
             {
@@ -167,11 +172,11 @@ namespace CatchGoldsGUI
                         MessageBox.Show("Ooops! You found a bear!! (health will decrease!)");
                         break;
                     }
-                case "🧈":
+                case "🥇":
                     {
                         Gold gold = new Gold();
                         gold.Effect(player);
-                        grid.HidedGrid(x, y, "🧈");
+                        grid.HidedGrid(x, y, "🥇");
                         MessageBox.Show("You found GOLD!!! (score will increase.)");
                         break;
                     }
@@ -223,8 +228,8 @@ namespace CatchGoldsGUI
             }
 
             MessageBox.Show(message);
-
-
+            
+           
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)

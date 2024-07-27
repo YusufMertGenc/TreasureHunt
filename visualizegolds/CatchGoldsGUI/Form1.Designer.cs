@@ -142,6 +142,7 @@ namespace CatchGoldsGUI
             this.button1.Text = "SUBMIT";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnSubmit_Click);
+            
             // 
             // groupBox2
             // 
@@ -172,7 +173,7 @@ namespace CatchGoldsGUI
             this.Health2.Location = new System.Drawing.Point(34, 84);
             this.Health2.Name = "Health2";
             this.Health2.Size = new System.Drawing.Size(111, 16);
-            this.Health2.TabIndex = 4;
+            this.Health2.TabIndex = 7;
             this.Health2.Text = "Player 2 Health: 0";
             // 
             // YCoordinate2
