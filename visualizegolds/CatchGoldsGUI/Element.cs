@@ -26,7 +26,7 @@
         public Food(int size) : base(size) { }
         public override void Effect(Player player)
         {
-            int effect = player.GetBoardSize() / 4;
+            int effect = 2;
             player.AdjustHealth(effect);
         }
     }
@@ -36,7 +36,7 @@
         public Wood(int size) : base(size) { }
         public override void Effect(Player player)
         {
-            int effect = player.GetBoardSize() / 4;
+            int effect = 1;
             player.AdjustHealth(effect);
         }
     }
@@ -65,7 +65,7 @@
         public Wolf(int size) : base(size, 'W', 'D') { }
         public override void Effect(Player player)
         {
-            int effect = -player.GetBoardSize() / 4;
+            int effect = -4;
             player.AdjustHealth(effect);
         }
     }
@@ -75,7 +75,7 @@
         public Bear(int size) : base(size, 'B', 'D') { }
         public override void Effect(Player player)
         {
-            int effect = -player.GetBoardSize() / 2;
+            int effect = -6;
             player.AdjustHealth(effect);
         }
     }

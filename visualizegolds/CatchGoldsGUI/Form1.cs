@@ -32,7 +32,7 @@ namespace CatchGoldsGUI
             player2 = new Player(sizeOfTheBoard);
             round = 0;
 
-            grid.ElementDeploy(2 * sizeOfTheBoard * sizeOfTheBoard / 25);
+            grid.ElementDeploy(5);
             SetupDataGridView();
             UpdateGridDisplay();
         }
