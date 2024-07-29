@@ -208,7 +208,7 @@ namespace CatchGoldsGUI
             this.dataGridView1.Size = new System.Drawing.Size(488, 245);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.DoubleClick += new System.EventHandler(this.btnSubmit_Click);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // Form1
             // 

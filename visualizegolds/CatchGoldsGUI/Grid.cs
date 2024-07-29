@@ -36,102 +36,14 @@ namespace CatchGoldsGUI
             {
                 grid[rand.Next(size), rand.Next(size)] = "🍖";
 
-                int tempPlaceX = rand.Next(size);
-                int tempPlaceY = rand.Next(size);
-                grid[tempPlaceX, tempPlaceY] = "🌳";
+                
+                grid[rand.Next(size), rand.Next(size)] = "🌳";
 
-                int randomPlacement = rand.Next(2);
-
-                if (randomPlacement == 0)
-                {
-                    if (tempPlaceX == size - 1)
-                    {
-                        grid[tempPlaceX - 1, tempPlaceY] = "🌳";
-                    }
-                    else
-                    {
-                        grid[tempPlaceX + 1, tempPlaceY] = "🌳";
-                    }
-                }
-                else if (randomPlacement == 1)
-                {
-                    if (tempPlaceY == size - 1)
-                    {
-                        grid[tempPlaceX, tempPlaceY - 1] = "🌳";
-                    }
-                    else
-                    {
-                        grid[tempPlaceX, tempPlaceY + 1] = "🌳";
-                    }
-                }
-                else
-                {
-                    if (tempPlaceX == 0 && tempPlaceY == 0)
-                    {
-                        grid[tempPlaceX + 1, tempPlaceY + 1] = "🌳";
-                    }
-                    else if (tempPlaceX == size && tempPlaceY == 0)
-                    {
-                        grid[tempPlaceX - 1, tempPlaceY + 1] = "🌳";
-                    }
-                    else if (tempPlaceX == 0 && tempPlaceY == size)
-                    {
-                        grid[tempPlaceX + 1, tempPlaceY - 1] = "🌳";
-                    }
-                    else if (tempPlaceX == size && tempPlaceY == size)
-                    {
-                        grid[tempPlaceX - 1, tempPlaceY - 1] = "🌳";
-                    }
-                }
+                grid[rand.Next(size), rand.Next(size)] = "🐻";
 
                 grid[rand.Next(size), rand.Next(size)] = "💊";
 
-                if (i % 2 == 0)
-                {
-                    int randomPlacement1 = rand.Next(2);
-
-                    int coordinateX = rand.Next(size);
-                    int coordinateY = rand.Next(size);
-
-                    grid[coordinateX, coordinateY] = "🐻";
-
-                    if (randomPlacement1 == 1)
-                    {
-                        if (coordinateX == 0)
-                        {
-                            grid[coordinateX + 1, coordinateY] = "🐻";
-                            grid[coordinateX + 2, coordinateY] = "🐻";
-                        }
-                        else if (coordinateX == size - 1)
-                        {
-                            grid[coordinateX - 1, coordinateY] = "🐻";
-                            grid[coordinateX - 2, coordinateY] = "🐻";
-                        }
-                        else
-                        {
-                            grid[coordinateX - 1, coordinateY] = "🐻";
-                            grid[coordinateX + 1, coordinateY] = "🐻";
-                        }
-                    }
-                    else if (randomPlacement1 == 0)
-                    {
-                        if (coordinateY == 0)
-                        {
-                            grid[coordinateX, coordinateY + 1] = "🐻";
-                            grid[coordinateX, coordinateY + 2] = "🐻";
-                        }
-                        else if (coordinateY == size - 1)
-                        {
-                            grid[coordinateX, coordinateY - 1] = "🐻";
-                            grid[coordinateX, coordinateY - 2] = "🐻";
-                        }
-                        else
-                        {
-                            grid[coordinateX, coordinateY - 1] = "🐻";
-                            grid[coordinateX, coordinateY + 1] = "🐻";
-                        }
-                    }
-                }
+               
 
                 grid[rand.Next(size), rand.Next(size)] = "🐺";
                 

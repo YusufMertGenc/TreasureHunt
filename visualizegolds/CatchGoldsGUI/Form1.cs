@@ -18,6 +18,8 @@ namespace CatchGoldsGUI
         private List<(int, int)> player1Selections = new List<(int, int)>();
         private List<(int, int)> player2Selections = new List<(int, int)>();
 
+  
+
         public Form1()
         {
             InitializeComponent();
@@ -52,11 +54,14 @@ namespace CatchGoldsGUI
             dataGridView1.DefaultCellStyle.BackColor = Color.DarkSlateGray;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.Single;
             dataGridView1.DefaultCellStyle.Font = new Font("Calibri", 8F, GraphicsUnit.Point);
-            
-            
+            dataGridView1.CellClick += dataGridView1_CellClick;
+            dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
         }
 
-
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Do nothing on single click
+        }
         private void UpdateGridDisplay()
         {
             dataGridView1.RowCount = grid.GetSize();
@@ -139,6 +144,7 @@ namespace CatchGoldsGUI
                         grid.HidedGrid(x, y, "🍖");
                         MessageBox.Show("You found Food! (health will increase.)");
                         break;
+                       
                     }
                 case "🌳":
                     {
@@ -228,38 +234,52 @@ namespace CatchGoldsGUI
             }
 
             MessageBox.Show(message);
+
+            Application.Exit();
+        }
+
+
+
+        private void dataGridView1_CellDoubleClick(object senderi, DataGridViewCellEventArgs e)
+        {
+
             
-           
-        }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellClick(object senderi, DataGridViewCellEventArgs e)
-        {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
 
 
                 if (player1Turn)
                 {
+                    if (player2Selections.Contains((e.RowIndex, e.ColumnIndex)))
+                    {
+                        MessageBox.Show("Player 2 has selected the cell.");
+                        return;
+                    }
+
                     player1X = e.RowIndex;
                     player1Y = e.ColumnIndex;
                     Xcoordinate1.Text = $"X: {player1X}";
                     YCoordinate1.Text = $"Y: {player1Y}";
                     player1Selections.Add((player1X, player1Y));
                     player1Turn = false; // Switch turn to player 2
+                   
                 }
                 else
                 {
+                    if (player1Selections.Contains((e.RowIndex, e.ColumnIndex)))
+                    {
+                        MessageBox.Show("Player 1 has selected the cell.");
+                        return;
+                    }
+
                     player2X = e.RowIndex;
                     player2Y = e.ColumnIndex;
                     XCoordinate2.Text = $"X: {player2X}";
                     YCoordinate2.Text = $"Y: {player2Y}";
                     player2Selections.Add((player2X, player2Y));
                     player1Turn = true; // Switch turn to player 1
+                    
                 }
                 UpdateCell(e.RowIndex, e.ColumnIndex);
             }
@@ -270,6 +290,10 @@ namespace CatchGoldsGUI
         }
 
         private void Xcoordinate1_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -18,7 +18,7 @@
         public void GoldCounter()
         {
             goldCount++;
-            score += 100;
+            score += 50;
             if (goldCount % 3 == 0 && goldCount != 0)
             {
                 AdjustHealth(boardSize / 4);
@@ -58,5 +58,7 @@
         {
             return boardSize;
         }
+
+        public bool HasMadeChoice { get; set; }
     }
 }
