@@ -1,27 +1,30 @@
 ﻿using System;
 
-namespace CatchGoldsGUI
+namespace TreasureHuntGUI
 {
     public class Grid
     {
+        private readonly int rows;
+        private readonly int cols;
         private readonly int size;
         private readonly string[,] grid;
         private readonly string[,] hidedGrid;
 
-        public Grid(int size)
+        public Grid(int rows,int cols)
         {
-            this.size = size;
-            grid = new string[size, size];
-            hidedGrid = new string[size, size];
+            this.rows = rows;
+            this.cols = cols;
+            grid = new string[rows, cols];
+            hidedGrid = new string[rows, cols];
             InitializeGrid();
         }
 
         private void InitializeGrid()
         {
 
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < size; j++)
+                for (int j = 0; j < cols; j++)
                 {
                     grid[i, j] = "★";
                     hidedGrid[i, j] = "★";
@@ -30,36 +33,33 @@ namespace CatchGoldsGUI
         }
 
         public void ElementDeploy(int numberOfElements)
-        {
+        {            
             Random rand = new Random();
             for (int i = 0; i < numberOfElements; i++)
             {
-                grid[rand.Next(size), rand.Next(size)] = "🍖";
+                grid[rand.Next(rows), rand.Next(cols)] = "🍖";
 
-                
-                grid[rand.Next(size), rand.Next(size)] = "🌳";
+                grid[rand.Next(rows), rand.Next(cols)] = "🌳";
 
-                grid[rand.Next(size), rand.Next(size)] = "🐻";
+                grid[rand.Next(rows), rand.Next(cols)] = "🐻";
 
-                grid[rand.Next(size), rand.Next(size)] = "💊";
+                grid[rand.Next(rows), rand.Next(cols)] = "💊";
 
-               
+                grid[rand.Next(rows), rand.Next(cols)] = "🐺";
 
-                grid[rand.Next(size), rand.Next(size)] = "🐺";
-                
             }
 
             for (int i = 0; i < 6; i++)
-                grid[rand.Next(size), rand.Next(size)] = "🥇";
+                grid[rand.Next(rows), rand.Next(cols)] = "💰";
 
 
         }
 
         public void Display()
         {
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < size; j++)
+                for (int j = 0; j < cols; j++)
                 {
                     Console.Write(grid[i, j] + " ");
                 }
@@ -76,9 +76,9 @@ namespace CatchGoldsGUI
 
         public void DisplayCurrentGrid()
         {
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < size; j++)
+                for (int j = 0; j < cols; j++)
                 {
                     Console.Write(hidedGrid[i, j] + " ");
                 }
@@ -87,7 +87,8 @@ namespace CatchGoldsGUI
         }
 
 
-        public int GetSize() => size;
+        public int GetRows() => rows;
+        public int GetCols() => cols;
         public string GetGridValue(int x, int y) => hidedGrid[x, y];
     }
 

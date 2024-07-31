@@ -1,4 +1,4 @@
-﻿namespace CatchGoldsGUI
+﻿namespace TreasureHuntGUI
 {
     public abstract class Element
     {
@@ -26,7 +26,7 @@
         public Food(int size) : base(size) { }
         public override void Effect(Player player)
         {
-            int effect = 2;
+            int effect = 5;
             player.AdjustHealth(effect);
         }
     }
@@ -36,7 +36,7 @@
         public Wood(int size) : base(size) { }
         public override void Effect(Player player)
         {
-            int effect = 1;
+            int effect = 2;
             player.AdjustHealth(effect);
         }
     }
@@ -46,7 +46,7 @@
         public MedicalSupplies(int size) : base(size) { }
         public override void Effect(Player player)
         {
-            int effect = player.GetBoardSize() / 2;
+            int effect = 10;
             player.AdjustHealth(effect);
         }
     }
@@ -65,7 +65,7 @@
         public Wolf(int size) : base(size, 'W', 'D') { }
         public override void Effect(Player player)
         {
-            int effect = -4;
+            int effect = -5;
             player.AdjustHealth(effect);
         }
     }
@@ -75,17 +75,17 @@
         public Bear(int size) : base(size, 'B', 'D') { }
         public override void Effect(Player player)
         {
-            int effect = -6;
+            int effect = -8;
             player.AdjustHealth(effect);
         }
     }
 
-    public class Gold : Element
+    public class Treasure : Element
     {
-        public Gold() : base() { }
+        public Treasure() : base() { }
         public override void Effect(Player player)
         {
-            player.GoldCounter();
+            player.TreasureCounter();
         }
     }
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace CatchGoldsGUI
+namespace TreasureHuntGUI
 {
     internal static class Program
     {

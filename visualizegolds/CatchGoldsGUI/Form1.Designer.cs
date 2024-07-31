@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace CatchGoldsGUI
+namespace TreasureHuntGUI
 {
     partial class Form1
     {
@@ -124,7 +124,7 @@ namespace CatchGoldsGUI
             this.RoundNumber.Name = "RoundNumber";
             this.RoundNumber.Size = new System.Drawing.Size(211, 49);
             this.RoundNumber.TabIndex = 1;
-            this.RoundNumber.Text = "Round 0/12";
+            this.RoundNumber.Text = "Round 0/15";
             // 
             // button1
             // 

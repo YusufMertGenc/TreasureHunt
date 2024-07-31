@@ -1,25 +1,25 @@
-﻿namespace CatchGoldsGUI
+﻿namespace TreasureHuntGUI
 {
     public class Player
     {
         private int score;
-        private int goldCount;
+        private int treasureCount;
         private int health;
         private readonly int boardSize;
 
         public Player(int boardSize)
         {
             this.boardSize = boardSize;
-            this.health = 2 * boardSize;
+            this.health = 20;
             score = 0;
-            this.goldCount = 0;
+            this.treasureCount = 0;
         }
 
-        public void GoldCounter()
+        public void TreasureCounter()
         {
-            goldCount++;
+            treasureCount++;
             score += 50;
-            if (goldCount % 3 == 0 && goldCount != 0)
+            if (treasureCount % 3 == 0 && treasureCount != 0)
             {
                 AdjustHealth(boardSize / 4);
             }
@@ -38,13 +38,13 @@
         {
             this.score = score;
         }
-        public int GetGoldCount()
+        public int GetTreasureCount()
         {
-            return goldCount;
+            return treasureCount;
         }
-        public void SetGoldCount(int goldCount)
+        public void SetGoldCount(int treasureCount)
         {
-            this.goldCount = goldCount;
+            this.treasureCount = treasureCount;
         }
         public int GetHealth()
         {

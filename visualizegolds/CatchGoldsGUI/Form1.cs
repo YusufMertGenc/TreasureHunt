@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace CatchGoldsGUI
+namespace TreasureHuntGUI
 {
     public partial class Form1 : Form
     {
@@ -18,7 +18,7 @@ namespace CatchGoldsGUI
         private List<(int, int)> player1Selections = new List<(int, int)>();
         private List<(int, int)> player2Selections = new List<(int, int)>();
 
-  
+
 
         public Form1()
         {
@@ -28,13 +28,15 @@ namespace CatchGoldsGUI
 
         private void InitializeGame()
         {
-            int sizeOfTheBoard = 5;
-            grid = new Grid(sizeOfTheBoard);
-            player1 = new Player(sizeOfTheBoard);
-            player2 = new Player(sizeOfTheBoard);
+            int rows = 5;
+            int cols = 6;
+            
+            grid = new TreasureHuntGUI.Grid(rows, cols);
+            player1 = new Player(rows*cols);
+            player2 = new Player(rows*cols);
             round = 0;
 
-            grid.ElementDeploy(5);
+            grid.ElementDeploy(6);
             SetupDataGridView();
             UpdateGridDisplay();
         }
@@ -64,26 +66,26 @@ namespace CatchGoldsGUI
         }
         private void UpdateGridDisplay()
         {
-            dataGridView1.RowCount = grid.GetSize();
-            dataGridView1.ColumnCount = grid.GetSize();
+            dataGridView1.RowCount = grid.GetRows();
+            dataGridView1.ColumnCount = grid.GetCols();
 
-            for (int i = 0; i < grid.GetSize(); i++)
+            for (int i = 0; i < grid.GetRows(); i++)
             {
-                for (int j = 0; j < grid.GetSize(); j++)
+                for (int j = 0; j < grid.GetCols(); j++)
                 {
                     UpdateCell(i, j);
                 }
             }
 
-            for (int j = 0; j < grid.GetSize(); j++)
+            for (int j = 0; j < grid.GetCols(); j++)
             {
                 dataGridView1.Columns[j].SortMode = DataGridViewColumnSortMode.NotSortable;
-                dataGridView1.Columns[j].Width = dataGridView1.Width / grid.GetSize();
+                dataGridView1.Columns[j].Width = dataGridView1.Width / grid.GetCols();
             }
 
-            for (int i = 0; i < grid.GetSize(); i++)
+            for (int i = 0; i < grid.GetRows(); i++)
             {
-                dataGridView1.Rows[i].Height = dataGridView1.Height / grid.GetSize();
+                dataGridView1.Rows[i].Height = dataGridView1.Height / grid.GetRows();
             }
         }
 
@@ -118,7 +120,7 @@ namespace CatchGoldsGUI
             UpdatePlayerStats();
             round++;
 
-            if (player1.GetHealth() <= 0 || player2.GetHealth() <= 0 || round >= 12)
+            if (player1.GetHealth() <= 0 || player2.GetHealth() <= 0 || round >= 15)
             {
                 EndGame();
             }
@@ -178,12 +180,12 @@ namespace CatchGoldsGUI
                         MessageBox.Show("Ooops! You found a bear!! (health will decrease!)");
                         break;
                     }
-                case "🥇":
+                case "💰":
                     {
-                        Gold gold = new Gold();
+                        Treasure gold = new Treasure();
                         gold.Effect(player);
-                        grid.HidedGrid(x, y, "🥇");
-                        MessageBox.Show("You found GOLD!!! (score will increase.)");
+                        grid.HidedGrid(x, y, "💰");
+                        MessageBox.Show("You found Treasure! (score will increase.)");
                         break;
                     }
                 default:
@@ -197,7 +199,7 @@ namespace CatchGoldsGUI
 
         private void UpdatePlayerStats()
         {
-            RoundNumber.Text = $"Round {round + 1}/12";
+            RoundNumber.Text = $"Round {round + 1}/15";
             Health1.Text = $"Player 1 Health: {player1.GetHealth()}";
             Score1.Text = $"Player 1 Score: {player1.GetScore()}";
             Health2.Text = $"Player 2 Health: {player2.GetHealth()}";
