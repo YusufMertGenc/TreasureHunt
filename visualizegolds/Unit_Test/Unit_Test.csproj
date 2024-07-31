@@ -56,9 +56,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CatchGoldsGUI\CatchGoldsGUI.csproj">
+    <ProjectReference Include="..\CatchGoldsGUI\TreasureHunt.csproj">
       <Project>{95311c65-69a5-43f0-9460-198fc5c8501b}</Project>
-      <Name>CatchGoldsGUI</Name>
+      <Name>TreasureHunt</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
