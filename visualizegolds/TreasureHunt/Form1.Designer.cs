@@ -1,5 +1,4 @@
 ﻿using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace TreasureHuntGUI
@@ -227,9 +226,6 @@ namespace TreasureHuntGUI
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
-
-
-
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
@@ -262,6 +258,4 @@ namespace TreasureHuntGUI
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label Xcoordinate1;
     }
-
 }
-

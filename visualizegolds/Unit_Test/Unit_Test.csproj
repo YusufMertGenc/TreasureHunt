@@ -56,7 +56,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CatchGoldsGUI\TreasureHunt.csproj">
+    <ProjectReference Include="..\TreasureHunt\TreasureHunt.csproj">
       <Project>{95311c65-69a5-43f0-9460-198fc5c8501b}</Project>
       <Name>TreasureHunt</Name>
     </ProjectReference>

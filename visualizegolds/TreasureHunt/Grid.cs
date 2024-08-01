@@ -10,7 +10,7 @@ namespace TreasureHuntGUI
         private readonly string[,] grid;
         private readonly string[,] hidedGrid;
 
-        public Grid(int rows,int cols)
+        public Grid(int rows, int cols)
         {
             this.rows = rows;
             this.cols = cols;
@@ -21,7 +21,6 @@ namespace TreasureHuntGUI
 
         private void InitializeGrid()
         {
-
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < cols; j++)
@@ -33,7 +32,7 @@ namespace TreasureHuntGUI
         }
 
         public void ElementDeploy(int numberOfElements)
-        {            
+        {
             Random rand = new Random();
             for (int i = 0; i < numberOfElements; i++)
             {
@@ -51,8 +50,6 @@ namespace TreasureHuntGUI
 
             for (int i = 0; i < 6; i++)
                 grid[rand.Next(rows), rand.Next(cols)] = "💰";
-
-
         }
 
         public void Display()
@@ -86,13 +83,8 @@ namespace TreasureHuntGUI
             }
         }
 
-
         public int GetRows() => rows;
         public int GetCols() => cols;
         public string GetGridValue(int x, int y) => hidedGrid[x, y];
     }
-
-
-
-
 }

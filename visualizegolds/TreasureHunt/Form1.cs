@@ -17,8 +17,7 @@ namespace TreasureHuntGUI
 
         private List<(int, int)> player1Selections = new List<(int, int)>();
         private List<(int, int)> player2Selections = new List<(int, int)>();
-
-
+        private List<(int, int)> selectedCoordinates = new List<(int, int)>();
 
         public Form1()
         {
@@ -30,23 +29,22 @@ namespace TreasureHuntGUI
         {
             int rows = 5;
             int cols = 6;
-            
+
             grid = new TreasureHuntGUI.Grid(rows, cols);
-            player1 = new Player(rows*cols);
-            player2 = new Player(rows*cols);
+            player1 = new Player(rows * cols);
+            player2 = new Player(rows * cols);
             round = 0;
 
             grid.ElementDeploy(6);
-            
+
             UpdateGridDisplay();
         }
-
-       
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Do nothing on single click
         }
+
         private void UpdateGridDisplay()
         {
             dataGridView1.RowCount = grid.GetRows();
@@ -80,19 +78,16 @@ namespace TreasureHuntGUI
             if (player1Selections.Contains((i, j)))
             {
                 dataGridView1.Rows[i].Cells[j].Style.BackColor = Color.YellowGreen;
-                
+
             }
             else if (player2Selections.Contains((i, j)))
             {
                 dataGridView1.Rows[i].Cells[j].Style.BackColor = Color.DarkCyan;
             }
-
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-
-
             // Process player1's choice
             ProcessChoice(player1, player1X, player1Y);
             // Process player2's choice
@@ -109,16 +104,18 @@ namespace TreasureHuntGUI
             }
 
             player1Turn = true; // Reset turn for next round
-
-
-
         }
-
-
-
 
         private void ProcessChoice(Player player, int x, int y)
         {
+            if (selectedCoordinates.Contains((x, y)))
+            {
+                MessageBox.Show("This coordinate has already been selected. Please choose another.");
+                return;
+            }
+
+            selectedCoordinates.Add((x, y));
+
             string choice = grid.Choice(x, y);
             switch (choice)
             {
@@ -129,7 +126,6 @@ namespace TreasureHuntGUI
                         grid.HidedGrid(x, y, "🍖");
                         MessageBox.Show("You found Food! (health will increase.)");
                         break;
-                       
                     }
                 case "🌳":
                     {
@@ -223,16 +219,15 @@ namespace TreasureHuntGUI
             Application.Exit();
         }
 
-
-
-        private void dataGridView1_CellDoubleClick(object senderi, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            
-
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-
+                if (selectedCoordinates.Contains((e.RowIndex, e.ColumnIndex)))
+                {
+                    MessageBox.Show("This coordinate has already been selected. Please choose another.");
+                    return;
+                }
 
                 if (player1Turn)
                 {
@@ -248,7 +243,6 @@ namespace TreasureHuntGUI
                     YCoordinate1.Text = $"Y: {player1Y}";
                     player1Selections.Add((player1X, player1Y));
                     player1Turn = false; // Switch turn to player 2
-                   
                 }
                 else
                 {
@@ -264,11 +258,11 @@ namespace TreasureHuntGUI
                     YCoordinate2.Text = $"Y: {player2Y}";
                     player2Selections.Add((player2X, player2Y));
                     player1Turn = true; // Switch turn to player 1
-                    
                 }
                 UpdateCell(e.RowIndex, e.ColumnIndex);
             }
         }
+
         private void label10_Click(object sender, EventArgs e)
         {
 
