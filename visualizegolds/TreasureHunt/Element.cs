@@ -1,4 +1,6 @@
-﻿namespace TreasureHuntGUI
+﻿using System.Windows.Forms;
+
+namespace TreasureHuntGUI
 {
     public abstract class Element
     {
@@ -75,8 +77,26 @@
         public Bear(int size) : base(size, 'B', 'D') { }
         public override void Effect(Player player)
         {
-            int effect = -8;
+            int effect = -10;
             player.AdjustHealth(effect);
+        }
+    }
+
+    public class Goblin : WildAnimals
+    {
+        public Goblin(int size) : base(size, 'G' , 'D') { }
+
+        public override void Effect(Player player)
+        {
+            DialogResult result = MessageBox.Show("A goblin has appeared! Choose:\nYes: Lose 5 health\nNo: Lose 50 score", "Goblin Attack", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                player.AdjustHealth(-7);
+            }
+            else if (result == DialogResult.No)
+            {
+                player.SetScore(player.GetScore() - 50);
+            }
         }
     }
 

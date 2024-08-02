@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Media;
 using System.Windows.Forms;
 
 namespace TreasureHuntGUI
@@ -15,6 +16,9 @@ namespace TreasureHuntGUI
         private int player1X, player1Y, player2X, player2Y;
         private bool player1Turn = true;
 
+      
+
+
         private List<(int, int)> player1Selections = new List<(int, int)>();
         private List<(int, int)> player2Selections = new List<(int, int)>();
         private List<(int, int)> selectedCoordinates = new List<(int, int)>();
@@ -23,7 +27,11 @@ namespace TreasureHuntGUI
         {
             InitializeComponent();
             InitializeGame();
+           
         }
+
+       
+
 
         private void InitializeGame()
         {
@@ -42,7 +50,8 @@ namespace TreasureHuntGUI
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Do nothing on single click
+            
+            
         }
 
         private void UpdateGridDisplay()
@@ -121,6 +130,7 @@ namespace TreasureHuntGUI
             {
                 case "🍖":
                     {
+                        
                         Food food = new Food(player.GetBoardSize());
                         food.Effect(player);
                         grid.HidedGrid(x, y, "🍖");
@@ -129,6 +139,7 @@ namespace TreasureHuntGUI
                     }
                 case "🌳":
                     {
+                        
                         Wood wood = new Wood(player.GetBoardSize());
                         wood.Effect(player);
                         grid.HidedGrid(x, y, "🌳");
@@ -137,6 +148,7 @@ namespace TreasureHuntGUI
                     }
                 case "💊":
                     {
+                       
                         MedicalSupplies medic = new MedicalSupplies(player.GetBoardSize());
                         medic.Effect(player);
                         grid.HidedGrid(x, y, "💊");
@@ -145,6 +157,7 @@ namespace TreasureHuntGUI
                     }
                 case "🐺":
                     {
+                        
                         Wolf wolf = new Wolf(player.GetBoardSize());
                         wolf.Effect(player);
                         grid.HidedGrid(x, y, "🐺");
@@ -153,6 +166,7 @@ namespace TreasureHuntGUI
                     }
                 case "🐻":
                     {
+                       
                         Bear bear = new Bear(player.GetBoardSize());
                         bear.Effect(player);
                         grid.HidedGrid(x, y, "🐻");
@@ -161,10 +175,19 @@ namespace TreasureHuntGUI
                     }
                 case "💰":
                     {
+                        
                         Treasure gold = new Treasure();
                         gold.Effect(player);
                         grid.HidedGrid(x, y, "💰");
                         MessageBox.Show("You found Treasure! (score will increase.)");
+                        break;
+                    }
+                case "👹":
+                    {
+                        Goblin goblin = new Goblin(player.GetBoardSize());
+                        goblin.Effect(player);
+                        grid.HidedGrid(x, y, "👹");
+                        MessageBox.Show("A goblin has appeared! Make your choice.");
                         break;
                     }
                 default:

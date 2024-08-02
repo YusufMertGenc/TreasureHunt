@@ -240,6 +240,8 @@ namespace TreasureHuntGUI
             dataGridView1.DefaultCellStyle.Font = new Font("Calibri", 8F, GraphicsUnit.Point);
             dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
+
+            
         }
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

@@ -37,15 +37,22 @@ namespace TreasureHuntGUI
             for (int i = 0; i < numberOfElements; i++)
             {
                 grid[rand.Next(rows), rand.Next(cols)] = "🍖";
-
-                grid[rand.Next(rows), rand.Next(cols)] = "🌳";
-
-                grid[rand.Next(rows), rand.Next(cols)] = "🐻";
-
-                grid[rand.Next(rows), rand.Next(cols)] = "💊";
+              
+                grid[rand.Next(rows), rand.Next(cols)] = "🐻";                
 
                 grid[rand.Next(rows), rand.Next(cols)] = "🐺";
 
+            }
+
+            for (int i = 0; i < 4; i++)
+            {
+                grid[rand.Next(rows), rand.Next(cols)] = "💊";
+                grid[rand.Next(rows), rand.Next(cols)] = "🌳";
+            }
+            
+            for (int i = 0; i < 3; i++)
+            {
+                grid[rand.Next(rows), rand.Next(cols)] = "👹";
             }
 
             for (int i = 0; i < 6; i++)
