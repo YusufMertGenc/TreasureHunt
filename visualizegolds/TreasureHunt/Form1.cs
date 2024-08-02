@@ -206,6 +206,25 @@ namespace TreasureHuntGUI
             Score1.Text = $"Player 1 Score: {player1.GetScore()}";
             Health2.Text = $"Player 2 Health: {player2.GetHealth()}";
             Score2.Text = $"Player 2 Score: {player2.GetScore()}";
+
+            if (player1.GetHealth() <= 5)
+            {
+                Health1.ForeColor = Color.Red;
+            }
+            else
+            {
+                Health1.ForeColor = Color.Black;
+            }
+
+            if (player2.GetHealth() <= 5)
+            {
+                Health2.ForeColor = Color.Red;
+            }
+            else
+            {
+                Health2.ForeColor = Color.Black;
+            }
+
         }
 
         private void EndGame()
