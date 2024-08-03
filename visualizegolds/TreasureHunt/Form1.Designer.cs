@@ -216,7 +216,7 @@ namespace TreasureHuntGUI
             this.ClientSize = new System.Drawing.Size(1484, 717);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
-            this.Text = "Catch Golds Game";
+            this.Text = "Treasure Hunt Game";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

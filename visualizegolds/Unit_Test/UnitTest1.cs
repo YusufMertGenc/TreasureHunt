@@ -34,7 +34,7 @@ namespace TreasureHuntTests
             int initialHealth = player.GetHealth();
             MedicalSupplies medic = new MedicalSupplies(1);
             medic.Effect(player);
-            Assert.AreEqual(initialHealth + 10, player.GetHealth()); // Assuming the board size is 5
+            Assert.AreEqual(initialHealth + 10, player.GetHealth());
         }
 
         [TestMethod]

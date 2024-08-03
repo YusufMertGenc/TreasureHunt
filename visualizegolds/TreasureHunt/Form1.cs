@@ -202,9 +202,25 @@ namespace TreasureHuntGUI
         private void UpdatePlayerStats()
         {
             RoundNumber.Text = $"Round {round + 1}/15";
-            Health1.Text = $"Player 1 Health: {player1.GetHealth()}";
+
+            if (player1.GetHealth() < 0)
+            {
+                Health1.Text = $"Player 1 Health: 0";
+            }
+            else
+            {
+                Health1.Text = $"Player 1 Health: {player1.GetHealth()}";
+            }
             Score1.Text = $"Player 1 Score: {player1.GetScore()}";
-            Health2.Text = $"Player 2 Health: {player2.GetHealth()}";
+
+            if (player2.GetHealth() < 0)
+            {
+                Health1.Text = $"Player 2 Health: 0";
+            }
+            else
+            {
+                Health2.Text = $"Player 2 Health: {player2.GetHealth()}";
+            }
             Score2.Text = $"Player 2 Score: {player2.GetScore()}";
 
             if (player1.GetHealth() <= 5)
