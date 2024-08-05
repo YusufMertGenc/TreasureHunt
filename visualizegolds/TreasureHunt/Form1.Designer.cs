@@ -9,6 +9,7 @@ namespace TreasureHuntGUI
 
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Xcoordinate1 = new System.Windows.Forms.Label();
@@ -17,7 +18,6 @@ namespace TreasureHuntGUI
             this.YCoordinate1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.RoundNumber = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Score2 = new System.Windows.Forms.Label();
             this.Health2 = new System.Windows.Forms.Label();
@@ -41,7 +41,6 @@ namespace TreasureHuntGUI
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.RoundNumber, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.groupBox2, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -127,21 +126,6 @@ namespace TreasureHuntGUI
             this.RoundNumber.TabIndex = 1;
             this.RoundNumber.Text = "Round 0/15";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.SlateGray;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(494, 471);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(494, 137);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "SUBMIT";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnSubmit_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -208,7 +192,6 @@ namespace TreasureHuntGUI
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView1.Size = new System.Drawing.Size(488, 245);
             this.dataGridView1.TabIndex = 4;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // Form1
@@ -238,16 +221,12 @@ namespace TreasureHuntGUI
             dataGridView1.DefaultCellStyle.BackColor = Color.DarkSlateGray;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.Single;
             dataGridView1.DefaultCellStyle.Font = new Font("Calibri", 8F, GraphicsUnit.Point);
-            dataGridView1.CellClick += dataGridView1_CellClick;
-            dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
 
-            
         }
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label RoundNumber;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label Score1;
         private System.Windows.Forms.Label Health1;
         private System.Windows.Forms.Label YCoordinate1;

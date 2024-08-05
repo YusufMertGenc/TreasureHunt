@@ -48,11 +48,7 @@ namespace TreasureHuntGUI
             UpdateGridDisplay();
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-            
-        }
+        
 
         private void UpdateGridDisplay()
         {
@@ -95,25 +91,7 @@ namespace TreasureHuntGUI
             }
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
-        {
-            // Process player1's choice
-            ProcessChoice(player1, player1X, player1Y);
-            // Process player2's choice
-            ProcessChoice(player2, player2X, player2Y);
-
-            UpdateCell(player1X, player1Y);
-            UpdateCell(player2X, player2Y);
-            UpdatePlayerStats();
-            round++;
-
-            if (player1.GetHealth() <= 0 || player2.GetHealth() <= 0 || round >= 15)
-            {
-                EndGame();
-            }
-
-            player1Turn = true; // Reset turn for next round
-        }
+      
 
         private void ProcessChoice(Player player, int x, int y)
         {
@@ -279,6 +257,9 @@ namespace TreasureHuntGUI
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+
+       
+
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 if (selectedCoordinates.Contains((e.RowIndex, e.ColumnIndex)))
@@ -291,33 +272,59 @@ namespace TreasureHuntGUI
                 {
                     if (player2Selections.Contains((e.RowIndex, e.ColumnIndex)))
                     {
-                        MessageBox.Show("Player 2 has selected the cell.");
+                        MessageBox.Show("Player 2 has already selected this cell.");
                         return;
                     }
-
+                    
                     player1X = e.RowIndex;
                     player1Y = e.ColumnIndex;
                     Xcoordinate1.Text = $"X: {player1X}";
                     YCoordinate1.Text = $"Y: {player1Y}";
                     player1Selections.Add((player1X, player1Y));
+                    MessageBox.Show("Player 1 has selected");
                     player1Turn = false; // Switch turn to player 2
                 }
                 else
                 {
                     if (player1Selections.Contains((e.RowIndex, e.ColumnIndex)))
                     {
-                        MessageBox.Show("Player 1 has selected the cell.");
+                        MessageBox.Show("Player 1 has already selected this cell.");
                         return;
                     }
-
+                    
                     player2X = e.RowIndex;
                     player2Y = e.ColumnIndex;
                     XCoordinate2.Text = $"X: {player2X}";
                     YCoordinate2.Text = $"Y: {player2Y}";
                     player2Selections.Add((player2X, player2Y));
+                    MessageBox.Show("Player 2 has selected");
                     player1Turn = true; // Switch turn to player 1
                 }
-                UpdateCell(e.RowIndex, e.ColumnIndex);
+
+               UpdateCell(e.RowIndex, e.ColumnIndex);
+
+                if (player1Turn)
+                {
+                    // Both players have made their choices, process them
+                    ProcessChoice(player1, player1X, player1Y);
+                    
+                    ProcessChoice(player2, player2X, player2Y);
+                    
+
+                    UpdateCell(player1X, player1Y);
+                    UpdateCell(player2X, player2Y);
+                    UpdatePlayerStats();
+                    round++;
+
+                    if (player1.GetHealth() <= 0 || player2.GetHealth() <= 0 || round >= 15)
+                    {
+                        EndGame();
+                    }
+                }
+
+
+
+
             }
         }
 
