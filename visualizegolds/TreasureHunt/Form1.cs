@@ -197,7 +197,7 @@ namespace TreasureHuntGUI
                         break;
                     }
             }
-        }
+        } 
 
         private void UpdatePlayerStats()
         {
