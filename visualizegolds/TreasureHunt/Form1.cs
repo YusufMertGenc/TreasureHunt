@@ -171,6 +171,7 @@ namespace TreasureHuntGUI
                 default:
                     {
                         grid.HidedGrid(x, y, "Empty");
+                        
                         MessageBox.Show("You found Nothing!");
                         break;
                     }
@@ -183,23 +184,23 @@ namespace TreasureHuntGUI
 
             if (player1.GetHealth() < 0)
             {
-                Health1.Text = $"Player 1 Health: 0";
+                Health1.Text = $"Health: 0";
             }
             else
             {
-                Health1.Text = $"Player 1 Health: {player1.GetHealth()}";
+                Health1.Text = $"Health: {player1.GetHealth()}";
             }
-            Score1.Text = $"Player 1 Score: {player1.GetScore()}";
+            Score1.Text = $"Score: {player1.GetScore()}";
 
             if (player2.GetHealth() < 0)
             {
-                Health1.Text = $"Player 2 Health: 0";
+                Health1.Text = $"Health: 0";
             }
             else
             {
-                Health2.Text = $"Player 2 Health: {player2.GetHealth()}";
+                Health2.Text = $"Health: {player2.GetHealth()}";
             }
-            Score2.Text = $"Player 2 Score: {player2.GetScore()}";
+            Score2.Text = $"Score: {player2.GetScore()}";
 
             if (player1.GetHealth() <= 5)
             {
@@ -326,6 +327,26 @@ namespace TreasureHuntGUI
 
 
             }
+        }
+
+        private void howToPlay_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("");
+        }
+
+        private void YCoordinate1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void XCoordinate2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void YCoordinate2_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void label10_Click(object sender, EventArgs e)
