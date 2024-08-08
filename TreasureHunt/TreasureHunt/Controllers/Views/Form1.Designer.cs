@@ -9,7 +9,7 @@ namespace TreasureHuntGUI
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupPlayer1 = new System.Windows.Forms.GroupBox();
             this.Xcoordinate1 = new System.Windows.Forms.Label();
@@ -17,13 +17,13 @@ namespace TreasureHuntGUI
             this.Health1 = new System.Windows.Forms.Label();
             this.YCoordinate1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.RoundNumber = new System.Windows.Forms.Label();
             this.groupPlayer2 = new System.Windows.Forms.GroupBox();
             this.Score2 = new System.Windows.Forms.Label();
             this.Health2 = new System.Windows.Forms.Label();
             this.YCoordinate2 = new System.Windows.Forms.Label();
             this.XCoordinate2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.RoundNumber = new System.Windows.Forms.Label();
             this.gameName1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupPlayer1.SuspendLayout();
@@ -42,9 +42,9 @@ namespace TreasureHuntGUI
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.Controls.Add(this.groupPlayer1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.groupPlayer2, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.RoundNumber, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.gameName1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.RoundNumber, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -124,17 +124,6 @@ namespace TreasureHuntGUI
             this.label2.Size = new System.Drawing.Size(0, 27);
             this.label2.TabIndex = 0;
             // 
-            // RoundNumber
-            // 
-            this.RoundNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.RoundNumber.AutoSize = true;
-            this.RoundNumber.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RoundNumber.Location = new System.Drawing.Point(598, 499);
-            this.RoundNumber.Name = "RoundNumber";
-            this.RoundNumber.Size = new System.Drawing.Size(286, 81);
-            this.RoundNumber.TabIndex = 1;
-            this.RoundNumber.Text = "Round 0/15";
-            // 
             // groupPlayer2
             // 
             this.groupPlayer2.BackColor = System.Drawing.Color.DarkCyan;
@@ -199,32 +188,45 @@ namespace TreasureHuntGUI
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.MediumSeaGreen;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 8F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 8F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.DarkGreen;
-            this.dataGridView1.Location = new System.Drawing.Point(497, 219);
+            this.dataGridView1.Location = new System.Drawing.Point(494, 213);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(488, 245);
+            this.dataGridView1.Size = new System.Drawing.Size(494, 258);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // RoundNumber
+            // 
+            this.RoundNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.RoundNumber.AutoSize = true;
+            this.RoundNumber.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RoundNumber.Location = new System.Drawing.Point(598, 499);
+            this.RoundNumber.Name = "RoundNumber";
+            this.RoundNumber.Size = new System.Drawing.Size(286, 81);
+            this.RoundNumber.TabIndex = 1;
+            this.RoundNumber.Text = "Round 0/15";
             // 
             // gameName1
             // 
@@ -266,8 +268,8 @@ namespace TreasureHuntGUI
         private System.Windows.Forms.Label Health2;
         private System.Windows.Forms.Label YCoordinate2;
         private System.Windows.Forms.Label XCoordinate2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label Xcoordinate1;
         private Label gameName1;
+        private DataGridView dataGridView1;
     }
 }
