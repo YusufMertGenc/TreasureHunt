@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Media;
+using System.Numerics;
 using System.Windows.Forms;
 
 namespace TreasureHuntGUI
@@ -252,8 +253,20 @@ namespace TreasureHuntGUI
             }
 
             MessageBox.Show(message);
+            MessageBox.Show("GAME OVER!");
+            
+            DialogResult final = MessageBox.Show("Do you want to return to the Main Menu?","", MessageBoxButtons.YesNo);
+            
+            if (final == DialogResult.Yes)
+            {
+                Application.Restart();
+            }
+            else if (final == DialogResult.No)
+            {
+                Application.Exit();
+            }
 
-            Application.Exit();
+            
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
