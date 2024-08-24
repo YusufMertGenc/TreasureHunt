@@ -10,4 +10,4 @@ Random element placement on the grid.
 Different elements with unique effects on players.
 Health and score tracking for both players.
 End game conditions based on health or number of rounds.
-![Ekran Görüntüsü (73)](https://github.com/user-attachments/assets/9d0d3232-a9eb-4949-843b-0d73670f0dac)
+
